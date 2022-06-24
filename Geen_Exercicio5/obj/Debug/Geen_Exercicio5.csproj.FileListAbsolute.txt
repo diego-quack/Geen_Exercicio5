@@ -1,0 +1,7 @@
+C:\Users\ACER\source\repos\Geen_Exercicio5\Geen_Exercicio5\bin\Debug\Geen_Exercicio5.exe.config
+C:\Users\ACER\source\repos\Geen_Exercicio5\Geen_Exercicio5\bin\Debug\Geen_Exercicio5.exe
+C:\Users\ACER\source\repos\Geen_Exercicio5\Geen_Exercicio5\bin\Debug\Geen_Exercicio5.pdb
+C:\Users\ACER\source\repos\Geen_Exercicio5\Geen_Exercicio5\obj\Debug\Geen_Exercicio5.csproj.AssemblyReference.cache
+C:\Users\ACER\source\repos\Geen_Exercicio5\Geen_Exercicio5\obj\Debug\Geen_Exercicio5.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\Geen_Exercicio5\Geen_Exercicio5\obj\Debug\Geen_Exercicio5.exe
+C:\Users\ACER\source\repos\Geen_Exercicio5\Geen_Exercicio5\obj\Debug\Geen_Exercicio5.pdb
