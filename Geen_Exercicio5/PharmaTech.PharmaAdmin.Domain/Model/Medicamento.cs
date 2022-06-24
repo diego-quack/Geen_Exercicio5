@@ -28,8 +28,8 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Model
 
         public void Imprimir()
         {
-            Console.WriteLine($"O medicamento{Nome} de código {Codigo} " +
-                $"é do tipo {Tipo} e custa {Preco.ToString("F2")}");
+            Console.WriteLine($"O medicamento {Nome} de código {Codigo} " +
+                              $"é do tipo {Tipo} e custa R$: {Preco.ToString("F2")}");
         }
     }
 }

@@ -16,12 +16,12 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Service
 
             foreach(Medicamento remedio in listaMedicamento)
             {
-                if(remedio.Codigo == medicamento.Codigo)
+                if(remedio.Codigo.Equals(medicamento.Codigo))
                 {
-                    return 0;
+                    return medicamento.Codigo;
                 }
             }
-            return medicamento.Codigo;
+            return 0;
         }
         public static void AlterarPreco(Medicamento medicamento, double preco)
         {
