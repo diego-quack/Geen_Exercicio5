@@ -12,11 +12,10 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Service
     {
         public static long CadastrarMedicamento(List<Medicamento> listaMedicamento, Medicamento medicamento, TipoMedicamento tipo)
         {
-            listaMedicamento.Add(medicamento);
-
-            foreach(Medicamento remedio in listaMedicamento)
+            foreach (Medicamento remedio in listaMedicamento)
             {
-                if(remedio.Codigo.Equals(medicamento.Codigo))
+                listaMedicamento.Add(medicamento);
+                if (remedio.Codigo == medicamento.Codigo)
                 {
                     return medicamento.Codigo;
                 }
@@ -25,29 +24,41 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Service
         }
         public static void AlterarPreco(Medicamento medicamento, double preco)
         {
-            if(preco > 0)
+            if (preco > 0)
             {
                 medicamento.Preco = preco;
             }
         }
-        public static void ImprimirMedicamento(Medicamento medicamento)
+        public static void ImprimirMedicamento(List<Medicamento> lista, Medicamento medicamento)
         {
-            medicamento.Imprimir();
+            Medicamento.Imprimir(medicamento);
         }
-        public static long BuscarCodigoPorNome(List<Medicamento> listaMedicamento, Medicamento medicamento)
+        public static long BuscarCodigoPorNome(List<Medicamento> listaMedicamento, Medicamento nome)
         {
-            foreach(Medicamento remedio in listaMedicamento)
+            var dados = listaMedicamento.Where(md => md.Nome.Equals(nome));
+            foreach (var remedio in dados)
             {
-                return remedio.Codigo;
+                if(remedio.Codigo > 0)
+                {
+                    return remedio.Codigo;
+                }
+                return 0;
             }
-            return 0;
+            return nome.Codigo;
         }
-        public static void ImprimirMedicamentoPorTipo(List<Medicamento> listaMedicamento, TipoMedicamento tipo)
+        public static List<Medicamento> ImprimirMedicamentoPorTipo(List<Medicamento> listaMedicamento, TipoMedicamento tipo)
         {
-            foreach(Medicamento remedio in listaMedicamento)
+            var dados = listaMedicamento.Where(md => md.Tipo.Equals(tipo));
+            foreach (var remedio in dados)
             {
-                remedio.Imprimir();
+                if (remedio.Tipo.Equals(tipo))
+                {
+                    listaMedicamento.Add(remedio);
+                    ImprimirMedicamento(listaMedicamento, remedio);
+                }
+                return null;
             }
+            return listaMedicamento;
         }
     }
 }

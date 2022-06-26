@@ -1,9 +1,5 @@
 ﻿using Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Enum;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Model
 {
@@ -26,10 +22,10 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Model
             Tipo = tipo;
         }
 
-        public void Imprimir()
+        public static void Imprimir(Medicamento medicamento)
         {
-            Console.WriteLine($"O medicamento {Nome} de código {Codigo} " +
-                              $"é do tipo {Tipo} e custa R$: {Preco.ToString("F2")}");
+            Console.WriteLine($"O medicamento {medicamento.Nome}, de código {medicamento.Codigo}, " +
+                              $"é do tipo {medicamento.Tipo} e custa R$: {medicamento.Preco.ToString("F2")}");
         }
     }
 }

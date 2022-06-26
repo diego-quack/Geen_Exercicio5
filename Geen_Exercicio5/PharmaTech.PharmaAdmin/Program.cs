@@ -34,16 +34,22 @@ namespace Geen_Exercicio5
             //Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, paracetamol, paracetamol.Tipo));
             //Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, dipirona, dipirona.Tipo));
 
-            MedicamentoService.ImprimirMedicamento(paracetamol);
-            MedicamentoService.ImprimirMedicamento(dipirona);
+            Medicamento.Imprimir(paracetamol);
+            Medicamento.Imprimir(dipirona);
             Console.WriteLine();
 
             MedicamentoService.AlterarPreco(paracetamol, 11.35);
             MedicamentoService.AlterarPreco(dipirona, 4.45);
 
-            MedicamentoService.ImprimirMedicamento(paracetamol);
-            MedicamentoService.ImprimirMedicamento(dipirona);
+            Medicamento.Imprimir(paracetamol);
+            Medicamento.Imprimir(dipirona);
             Console.WriteLine();
+
+            Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, paracetamol));
+            Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, dipirona));
+            Console.WriteLine();
+
+            Console.WriteLine(MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Generico));
         }
     }
 }
