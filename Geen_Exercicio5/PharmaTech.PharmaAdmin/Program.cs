@@ -34,8 +34,9 @@ namespace Geen_Exercicio5
             listaMedicamento.Add(remedio1);
             listaMedicamento.Add(remedio2);
 
-            //Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, paracetamol, paracetamol.Tipo));
-            //Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, dipirona, dipirona.Tipo));
+            Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, remedio1, remedio1.Tipo));
+            Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, remedio2, remedio2.Tipo));
+            Console.WriteLine();
 
             Medicamento.Imprimir(remedio1);
             Medicamento.Imprimir(remedio2);

@@ -12,16 +12,16 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Service
     {
         public static long CadastrarMedicamento(List<Medicamento> listaMedicamento, Medicamento medicamento, TipoMedicamento tipo)
         {
-            foreach (Medicamento remedio in listaMedicamento)
+            foreach (Medicamento cadastrado in listaMedicamento)
             {
-                listaMedicamento.Add(medicamento);
-                if (remedio.Codigo == medicamento.Codigo)
+                if (cadastrado.Codigo.Equals(medicamento.Codigo))
                 {
-                    return medicamento.Codigo;
+                    return 0;
                 }
             }
-            return 0;
+            return medicamento.Codigo;
         }
+
         public static void AlterarPreco(Medicamento medicamento, double preco)
         {
             if (preco > 0)
@@ -35,24 +35,19 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Service
             Medicamento medicamento = new Medicamento();
 
             var dados = listaMedicamento.Where(md => md.Nome.Equals(nome)).Select(md => md.Codigo).DefaultIfEmpty(0);
-            foreach(var codigo in dados)
+            foreach (var codigo in dados)
             {
                 medicamento.Codigo = codigo;
             }
             return medicamento.Codigo;
         }
+
         public static List<Medicamento> ImprimirMedicamentoPorTipo(List<Medicamento> listaMedicamento, TipoMedicamento tipo)
         {
-            List<Medicamento> novaListaMedicamento = new List<Medicamento>();
-
             var dados = listaMedicamento.Where(md => md.Tipo.Equals(tipo));
             foreach (var remedio in dados)
             {
-                novaListaMedicamento.Add(remedio);
-                foreach(Medicamento remedio2 in novaListaMedicamento)
-                {
-                    Console.WriteLine(remedio2);
-                }
+                Console.WriteLine(remedio);
             }
             return null;
         }
