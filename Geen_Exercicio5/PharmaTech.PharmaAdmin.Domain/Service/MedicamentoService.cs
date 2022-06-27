@@ -10,16 +10,20 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Service
 {
     class MedicamentoService
     {
-        public static long CadastrarMedicamento(List<Medicamento> listaMedicamento, Medicamento medicamento, TipoMedicamento tipo)
+        public static long CadastrarMedicamento(List<Medicamento> listaMedicamento, string nome, double preco, long codigo, TipoMedicamento tipo)
         {
+            List<Medicamento> listaTemp = new List<Medicamento>();
+            Medicamento novoMedicamento = new Medicamento(codigo, nome, preco, tipo);
+            listaTemp.Add(novoMedicamento);
+
             foreach (Medicamento cadastrado in listaMedicamento)
             {
-                if (cadastrado.Codigo.Equals(medicamento.Codigo))
+                if (codigo == cadastrado.Codigo)
                 {
                     return 0;
                 }
             }
-            return medicamento.Codigo;
+            return codigo;
         }
 
         public static void AlterarPreco(Medicamento medicamento, double preco)

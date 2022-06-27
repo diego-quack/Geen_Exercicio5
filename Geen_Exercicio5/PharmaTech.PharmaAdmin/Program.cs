@@ -30,29 +30,44 @@ namespace Geen_Exercicio5
                 Preco = 6.30,
                 Tipo = TipoMedicamento.Similar
             };
+            Medicamento remedio3 = new Medicamento
+            {
+                Codigo = 303030,
+                Nome = "Loratadina",
+                Preco = 8.85,
+                Tipo = TipoMedicamento.Original
+            };
 
             listaMedicamento.Add(remedio1);
             listaMedicamento.Add(remedio2);
+            listaMedicamento.Add(remedio3);
 
-            Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, remedio1, remedio1.Tipo));
-            Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, remedio2, remedio2.Tipo));
+            Console.WriteLine(MedicamentoService.CadastrarMedicamento(
+                listaMedicamento, "Loratadina", 8.85, 404040, TipoMedicamento.Original));
+            Console.WriteLine(MedicamentoService.CadastrarMedicamento(
+                listaMedicamento, "Rivotril", 22.45, 303030, TipoMedicamento.Original));
             Console.WriteLine();
 
             Medicamento.Imprimir(remedio1);
             Medicamento.Imprimir(remedio2);
+            Medicamento.Imprimir(remedio3);
             Console.WriteLine();
 
             MedicamentoService.AlterarPreco(remedio1, 11.35);
             MedicamentoService.AlterarPreco(remedio2, 4.45);
+            MedicamentoService.AlterarPreco(remedio3, 7.25);
 
             Medicamento.Imprimir(remedio1);
             Medicamento.Imprimir(remedio2);
+            Medicamento.Imprimir(remedio3);
             Console.WriteLine();
 
             Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, "Paracetamol"));
             Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, "Dipirona"));
+            Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, "Loratadina"));
             Console.WriteLine();
 
+            //Alterar o tipo para gerar saídas diferentes.
             Console.WriteLine(MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Similar));
         }
     }
