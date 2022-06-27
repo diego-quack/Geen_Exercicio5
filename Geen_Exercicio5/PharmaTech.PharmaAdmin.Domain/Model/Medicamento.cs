@@ -7,7 +7,7 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Model
     {
         public long Codigo { get; set; }
         public string Nome { get; set; }
-        public double  Preco { get; set; }
+        public double Preco { get; set; }
         public TipoMedicamento Tipo { get; set; }
 
         public Medicamento()
@@ -24,8 +24,13 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Model
 
         public static void Imprimir(Medicamento medicamento)
         {
-            Console.WriteLine($"O medicamento {medicamento.Nome}, de código {medicamento.Codigo}, " +
-                              $"é do tipo {medicamento.Tipo} e custa R$: {medicamento.Preco.ToString("F2")}");
+            Console.WriteLine(medicamento);
+        }
+
+        public override string ToString()
+        {
+            return $"O medicamento {Nome}, de código {Codigo}, " +
+                   $"é do tipo {Tipo} e custa R$: {Preco.ToString("F2")}";
         }
     }
 }

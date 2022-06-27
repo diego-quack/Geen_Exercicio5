@@ -52,7 +52,7 @@ namespace Geen_Exercicio5
             Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, "Dipirona"));
             Console.WriteLine();
 
-            //MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Generico);
+            MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Generico);
         }
     }
 }
