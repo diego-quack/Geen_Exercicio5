@@ -43,12 +43,18 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Service
         }
         public static List<Medicamento> ImprimirMedicamentoPorTipo(List<Medicamento> listaMedicamento, TipoMedicamento tipo)
         {
+            List<Medicamento> novaListaMedicamento = new List<Medicamento>();
+
             var dados = listaMedicamento.Where(md => md.Tipo.Equals(tipo));
             foreach (var remedio in dados)
             {
-                listaMedicamento.Add(remedio);
+                novaListaMedicamento.Add(remedio);
+                foreach(Medicamento remedio2 in novaListaMedicamento)
+                {
+                    Console.WriteLine(remedio2);
+                }
             }
-            return listaMedicamento;
+            return null;
         }
     }
 }

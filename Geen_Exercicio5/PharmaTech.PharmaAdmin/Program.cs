@@ -20,7 +20,7 @@ namespace Geen_Exercicio5
                 Codigo = 101010,
                 Nome = "Paracetamol",
                 Preco = 4.75,
-                Tipo = TipoMedicamento.Generico
+                Tipo = TipoMedicamento.Similar
             };
 
             Medicamento remedio2 = new Medicamento
@@ -52,7 +52,7 @@ namespace Geen_Exercicio5
             Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, "Dipirona"));
             Console.WriteLine();
 
-            MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Generico);
+            Console.WriteLine(MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Similar));
         }
     }
 }
