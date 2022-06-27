@@ -20,7 +20,7 @@ namespace Geen_Exercicio5
                 Codigo = 101010,
                 Nome = "Paracetamol",
                 Preco = 4.75,
-                Tipo = TipoMedicamento.Similar
+                Tipo = TipoMedicamento.Generico
             };
 
             Medicamento remedio2 = new Medicamento
@@ -44,6 +44,8 @@ namespace Geen_Exercicio5
 
             Console.WriteLine(MedicamentoService.CadastrarMedicamento(
                 listaMedicamento, "Loratadina", 8.85, 404040, TipoMedicamento.Original));
+
+            //Código igual ao do remedio3 - retorna 0.
             Console.WriteLine(MedicamentoService.CadastrarMedicamento(
                 listaMedicamento, "Rivotril", 22.45, 303030, TipoMedicamento.Original));
             Console.WriteLine();
@@ -67,7 +69,7 @@ namespace Geen_Exercicio5
             Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, "Loratadina"));
             Console.WriteLine();
 
-            //Alterar o tipo para gerar saídas diferentes.
+            //Alterar o tipo para gerar a saída baseada nele.
             Console.WriteLine(MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Similar));
         }
     }
