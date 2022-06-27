@@ -15,7 +15,7 @@ namespace Geen_Exercicio5
         {
             List<Medicamento> listaMedicamento = new List<Medicamento>();
 
-            Medicamento paracetamol = new Medicamento
+            Medicamento remedio1 = new Medicamento
             {
                 Codigo = 101010,
                 Nome = "Paracetamol",
@@ -23,33 +23,36 @@ namespace Geen_Exercicio5
                 Tipo = TipoMedicamento.Generico
             };
 
-            Medicamento dipirona = new Medicamento
+            Medicamento remedio2 = new Medicamento
             {
                 Codigo = 202020,
                 Nome = "Dipirona",
                 Preco = 6.30,
-                Tipo = TipoMedicamento.Generico
+                Tipo = TipoMedicamento.Similar
             };
+
+            listaMedicamento.Add(remedio1);
+            listaMedicamento.Add(remedio2);
 
             //Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, paracetamol, paracetamol.Tipo));
             //Console.WriteLine(MedicamentoService.CadastrarMedicamento(listaMedicamento, dipirona, dipirona.Tipo));
 
-            Medicamento.Imprimir(paracetamol);
-            Medicamento.Imprimir(dipirona);
+            Medicamento.Imprimir(remedio1);
+            Medicamento.Imprimir(remedio2);
             Console.WriteLine();
 
-            MedicamentoService.AlterarPreco(paracetamol, 11.35);
-            MedicamentoService.AlterarPreco(dipirona, 4.45);
+            MedicamentoService.AlterarPreco(remedio1, 11.35);
+            MedicamentoService.AlterarPreco(remedio2, 4.45);
 
-            Medicamento.Imprimir(paracetamol);
-            Medicamento.Imprimir(dipirona);
+            Medicamento.Imprimir(remedio1);
+            Medicamento.Imprimir(remedio2);
             Console.WriteLine();
 
-            Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, paracetamol));
-            Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, dipirona));
+            Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, "Paracetamol"));
+            Console.WriteLine(MedicamentoService.BuscarCodigoPorNome(listaMedicamento, "Dipirona"));
             Console.WriteLine();
 
-            Console.WriteLine(MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Generico));
+            //MedicamentoService.ImprimirMedicamentoPorTipo(listaMedicamento, TipoMedicamento.Generico);
         }
     }
 }

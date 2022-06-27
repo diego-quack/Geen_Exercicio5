@@ -29,36 +29,26 @@ namespace Geen_Exercicio5.PharmaTech.PharmaAdmin.Domain.Service
                 medicamento.Preco = preco;
             }
         }
-        public static void ImprimirMedicamento(List<Medicamento> lista, Medicamento medicamento)
+
+        public static long BuscarCodigoPorNome(List<Medicamento> listaMedicamento, string nome)
         {
-            Medicamento.Imprimir(medicamento);
-        }
-        public static long BuscarCodigoPorNome(List<Medicamento> listaMedicamento, Medicamento nome)
-        {
-            var dados = listaMedicamento.Where(md => md.Nome.Equals(nome));
-            foreach (var remedio in dados)
+            Medicamento medicamento = new Medicamento();
+
+            var dados = listaMedicamento.Where(md => md.Nome.Equals(nome)).Select(md => md.Codigo).DefaultIfEmpty(0);
+            foreach(var codigo in dados)
             {
-                if(remedio.Codigo > 0)
-                {
-                    return remedio.Codigo;
-                }
-                return 0;
+                medicamento.Codigo = codigo;
             }
-            return nome.Codigo;
+            return medicamento.Codigo;
         }
-        public static List<Medicamento> ImprimirMedicamentoPorTipo(List<Medicamento> listaMedicamento, TipoMedicamento tipo)
+        public static void ImprimirMedicamentoPorTipo(List<Medicamento> listaMedicamento, TipoMedicamento tipo)
         {
             var dados = listaMedicamento.Where(md => md.Tipo.Equals(tipo));
             foreach (var remedio in dados)
             {
-                if (remedio.Tipo.Equals(tipo))
-                {
-                    listaMedicamento.Add(remedio);
-                    ImprimirMedicamento(listaMedicamento, remedio);
-                }
-                return null;
+                listaMedicamento.Add(remedio);
             }
-            return listaMedicamento;
+            Console.WriteLine(listaMedicamento);
         }
     }
 }
